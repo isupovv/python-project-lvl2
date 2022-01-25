@@ -11,4 +11,9 @@ def parser_adapter():
         'second_file',
         type=str,
     )
+    parser.add_argument(
+        '-f',
+        '--format',
+        help='set format of output',
+    )
     args = parser.parse_args()
