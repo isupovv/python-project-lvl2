@@ -1,2 +1,2 @@
-from generate_diff import generate_diff
-from argparse import parser_adapter
+from .generate_diff import *
+from .argparse import *

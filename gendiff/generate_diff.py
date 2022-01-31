@@ -30,17 +30,18 @@ def generate_diff(parsed_args):
                     only_in_second_json[k] = v
                 else:
                     in_two_jsons[k] = old_v
-    print('{')
+    result = '{'
     new_keys = list(keys)
     new_keys.sort()
     for key in new_keys:
         old_value = only_in_first_json.get(key)
         if old_value != None:
-            print(f'  - {key}: {old_value}')
+            result += f'\n  - {key}: {old_value}'
         value = in_two_jsons.get(key)
         if value != None:
-            print(f'    {key}: {value}')
+            result += f'\n  - {key}: {value}'
         new_value = only_in_second_json.get(key)
         if new_value != None:
-            print(f'  + {key}: {new_value}')
-    print('}')
+            result += f'\n  - {key}: {new_value}'
+    result += '\n}'
+    print(result)
