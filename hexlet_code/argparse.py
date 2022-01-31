@@ -17,3 +17,4 @@ def parser_adapter():
         help='set format of output',
     )
     args = parser.parse_args()
+    return args
